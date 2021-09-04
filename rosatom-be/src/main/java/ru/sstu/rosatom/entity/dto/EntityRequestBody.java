@@ -16,5 +16,6 @@ public class EntityRequestBody {
     Long count;
     String units;
     PaidType paymentMethod;
+    String region;
 
 }

@@ -22,7 +22,7 @@ public class RequestService {
     private final RequestRepo requestRepo;
     private final NalogService nalogService;
 
-    private final Map<String,String> map;
+    public final Map<String,String> map;
 
     public List<Request> requestList() {
         return requestRepo.findAll();
@@ -37,7 +37,7 @@ public class RequestService {
     public Integer save(EntityRequestBody entityRequestBody) {
 
         List<RusProfileEntity> rusProfileEntities = rusProfileService.getEntitiesByOkpd2(entityRequestBody.getCode());
-        List<NalogEntity> nalogEntities = nalogService.getNalogEntities(entityRequestBody.getCode());
+        List<NalogEntity> nalogEntities = nalogService.getNalogEntities(entityRequestBody.getCode(), entityRequestBody.getRegion());
 
        // List<Producer> producersFromRusProfile = ProducerService.convertRusProfile(rusProfileEntities);
         List<Producer> producersFromNalog = ProducerService.convertNalogEntity(nalogEntities);

@@ -9,6 +9,7 @@ import ru.sstu.rosatom.service.RequestService;
 import ru.sstu.rosatom.service.RusProfileService;
 
 import java.util.List;
+import java.util.Map;
 
 
 @RestController
@@ -33,6 +34,12 @@ public class RusProfileController {
     @GetMapping("/requests/{id}")
     public Request get(@PathVariable("id") Integer id) {
         return requestService.getById(id);
+    }
+
+
+    @GetMapping("/regions")
+    public Map<String, String> get() {
+        return requestService.map;
     }
 
 }
