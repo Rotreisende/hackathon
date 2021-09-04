@@ -5,6 +5,7 @@ import lombok.*;
 import ru.sstu.rosatom.entity.enums.PaidType;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -33,4 +34,8 @@ public class Request {
             orphanRemoval = true,
             cascade = CascadeType.ALL)
     private List<Producer> producers;
+
+    private LocalDate date;
+
+    private Integer countProducers;
 }

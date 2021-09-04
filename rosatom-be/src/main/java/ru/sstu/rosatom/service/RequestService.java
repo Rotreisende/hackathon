@@ -9,6 +9,7 @@ import ru.sstu.rosatom.entity.dto.rusprofile.RusProfileEntity;
 import ru.sstu.rosatom.repository.RequestRepo;
 
 import javax.persistence.Entity;
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -33,6 +34,10 @@ public class RequestService {
 
         List<Producer> producers = ProducerService.convert(rusProfileEntities);
 
+        Integer countProducers = producers.size();
+
+
+
         Request request = Request.builder()
                 .name(entityRequestBody.getName())
                 .code(entityRequestBody.getCode())
@@ -41,6 +46,8 @@ public class RequestService {
                 .paymentMethod(entityRequestBody.getPaymentMethod())
                 .units(entityRequestBody.getUnits())
                 .producers(producers)
+                .countProducers(countProducers)
+                .date(LocalDate.now())
                 .build();
 
         return requestRepo.save(request).getId();
