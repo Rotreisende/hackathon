@@ -36,6 +36,7 @@
   width: 100%;
   outline: none;
   padding: 1.1rem 1rem 0.7rem 1rem;
+  z-index: 1;
 }
 .form-input_filled .form-input__title, .form-input:focus-within .form-input__title {
   top: -0.2rem;

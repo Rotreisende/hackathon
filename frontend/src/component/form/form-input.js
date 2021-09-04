@@ -1,10 +1,12 @@
 import './form-input.css';
 
-export const FormInput = ({title, changeHandler, value, type}) => {
+export const FormInput = ({title, changeHandler, value, type, regexp}) => {
 
     const innerChangeHandler = (e) => {
-        const target = e.target;
-        changeHandler(target.value);
+        if (regexp === null || e.nativeEvent.data === null || e.nativeEvent.data.match(regexp)) {
+            const target = e.target;
+            changeHandler(target.value);
+        }
     }
 
     return (

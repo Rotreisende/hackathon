@@ -9,11 +9,12 @@ export class FormSelect extends React.Component {
         this.state = {
             active: false
         }
+        this.ref = React.createRef();
     }
 
     documentClickEventListener(e) {
         const target = e.target;
-        if (!target.closest('.form-select') && this.state.active) {
+        if (target.closest('.form-select') !== this.ref.current && this.state.active) {
             this.clickSelectHandler();
         }
     }
@@ -38,14 +39,10 @@ export class FormSelect extends React.Component {
 
     render() {
         return (
-            <div className={['form-select', this.state.active ? 'form-select_active' : '', !!this.props.value ? 'form-select_filled' : ''].join(' ')}>
+            <div ref={this.ref} className={['form-select', this.state.active ? 'form-select_active' : '', !!this.props.value ? 'form-select_filled' : ''].join(' ')}>
                 <div className={'form-select__form'} onClick={() => this.clickSelectHandler()}>
                     <span className={'form-select__form__title'}>{this.props.title}</span>
-                    {
-                        this.props.value?.title
-                            ?   <div className={'form-select__form__value'}>{this.props.value?.title}</div>
-                            :   <div className={'form-select__form__value'}></div>
-                    }
+                    <div className={'form-select__form__value'}>{this.props.value?.title ? this.props.value?.title : ''}</div>
                     <fieldset className={'form-select__form__fieldset'}>
                         <legend className={'form-select__form__fieldset__legend'}>{this.props.title}</legend>
                     </fieldset>

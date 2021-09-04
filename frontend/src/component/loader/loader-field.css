@@ -1,9 +1,9 @@
-.pre-loader-field {
+.loader-field {
   color: white;
   background: linear-gradient(90deg, #7b71de, blue, #7b71de);
   width: max-content;
   padding: 0 3rem;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   animation: opacity 1s;
 }
 
@@ -15,3 +15,5 @@
     opacity: 1;
   }
 }
+
+/*# sourceMappingURL=loader-field.css.map */

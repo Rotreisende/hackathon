@@ -38,7 +38,7 @@
   white-space: nowrap;
 }
 .form-select__form__value {
-  min-height: 1rem;
+  min-height: 1.3rem;
 }
 .form-select__form:hover > .form-select__form__fieldset {
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
@@ -51,6 +51,7 @@
   width: 100%;
   background-color: white;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  z-index: 1;
 }
 .form-select_active .form-select__form__fieldset {
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
