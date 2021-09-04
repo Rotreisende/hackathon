@@ -1,6 +1,7 @@
 import './request-card.css';
 import {Link} from "react-router-dom";
 import {PaymentMethod} from "../../enum/payment-method";
+import {PreLoaderField} from "../pre-loader/pre-loader-field";
 
 export const RequestCard = ({request}) => {
 
@@ -12,7 +13,7 @@ export const RequestCard = ({request}) => {
                         Способ оплаты
                     </span>
                     <span className={'request-card__info__item__value'}>
-                        {!!request ? PaymentMethod.convertToFullView(request.paymentMethod) : ''}
+                        {!!request ? PaymentMethod.convertToFullView(request.paymentMethod) : <PreLoaderField/>}
                     </span>
                 </div>
                 <div className={'request-card__info__item'}>
@@ -20,7 +21,7 @@ export const RequestCard = ({request}) => {
                         Наименование товара
                     </span>
                     <span className={'request-card__info__item__value'}>
-                        {!!request ? request.name : ''}
+                        {!!request ? request.name : <PreLoaderField/>}
                     </span>
                 </div>
                 <div className={'request-card__info__item'}>
@@ -28,7 +29,7 @@ export const RequestCard = ({request}) => {
                         ОКПД2
                     </span>
                     <span className={'request-card__info__item__value'}>
-                        {!!request ? request.code : ''}
+                        {!!request ? request.code : <PreLoaderField/>}
                     </span>
                 </div>
                 <div className={'request-card__info__item'}>
@@ -36,7 +37,7 @@ export const RequestCard = ({request}) => {
                         Подходящих изготовителей
                     </span>
                     <span className={'request-card__info__item__value'}>
-                        {!!request ? request.producersCount : ''}
+                        {!!request ? request.producersCount : <PreLoaderField/>}
                     </span>
                 </div>
             </div>
@@ -46,7 +47,7 @@ export const RequestCard = ({request}) => {
                         Сумма
                     </span>
                     <span className={'request-card__data__item__value'}>
-                        {!!request ? request.sum : ''} руб.
+                        {!!request ? request.sum : <PreLoaderField/>} руб.
                     </span>
                 </div>
                 <div className={'request-card__data__item'}>
@@ -57,7 +58,7 @@ export const RequestCard = ({request}) => {
                         {
                             !!request
                                 ? request.count + ' ' + request.units
-                                : ''
+                                : <PreLoaderField/>
                         }
                     </span>
                 </div>
@@ -66,7 +67,7 @@ export const RequestCard = ({request}) => {
                         Дата
                     </span>
                     <span className={'request-card__data__item__value'}>
-                        {!!request ? request.date : ''}
+                        {!!request ? request.date : <PreLoaderField/>}
                     </span>
                 </div>
             </div>

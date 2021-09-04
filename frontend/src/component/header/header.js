@@ -9,9 +9,14 @@ export const Header = () => {
                 <img src={logoImg} alt="logo" className={'header__logo__image'}/>
                 <span className={'header__logo__title'}>Атокупки</span>
             </Link>
-            <Link to={'/create-request'} className={'header__link'}>
-                Создать запрос
-            </Link>
+            <div className={'header__links'}>
+                <Link to={'/'} className={'header__link'}>
+                    Запросы
+                </Link>
+                <Link to={'/create-request'} className={'header__link'}>
+                    Создать запрос
+                </Link>
+            </div>
         </header>
     )
 }

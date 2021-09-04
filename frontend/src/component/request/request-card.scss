@@ -5,6 +5,7 @@
   display: flex;
   text-decoration: none;
   color: black;
+  transition: transform .1s;
 
   &__info, &__data {
     width: 100%;
@@ -30,5 +31,9 @@
     max-width: 300px;
     width: 100%;
     border-left: 1px solid  #ccc;
+  }
+
+  &:hover {
+    transform: scale(1.01);
   }
 }

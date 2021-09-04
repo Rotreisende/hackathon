@@ -1,0 +1,17 @@
+.pre-loader-field {
+  color: white;
+  background: linear-gradient(90deg, #7b71de, blue, #7b71de);
+  width: max-content;
+  padding: 0 3rem;
+  border-radius: .25rem;
+  animation: opacity 1s;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

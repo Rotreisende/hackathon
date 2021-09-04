@@ -21,7 +21,7 @@
   font-weight: 500;
 }
 .producer-card__body__item:not(:last-of-type) {
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #ccc;
 }
 
 /*# sourceMappingURL=producer-card.css.map */

@@ -19,8 +19,16 @@ export class RequestForm extends React.Component {
             sum: '',
             count: '',
             units: '',
-            paymentMethod: null
+            paymentMethod: null,
+            regions: [],
+            region: null
         }
+    }
+
+    componentDidMount() {
+        axios.get(RequestService.API_URL + 'regions')
+            .then(response => this.setState({regions: response.data}))
+            .catch(error => console.log(error));
     }
 
     changeNameHandler(value) {
@@ -47,6 +55,10 @@ export class RequestForm extends React.Component {
         this.setState({paymentMethod: value});
     }
 
+    changeRegionHandler(value) {
+        this.setState({region: value});
+    }
+
     submitHandler(e) {
         e.preventDefault();
         axios.post(
@@ -57,7 +69,8 @@ export class RequestForm extends React.Component {
                 sum: this.state.sum,
                 count: this.state.count,
                 units: this.state.units,
-                paymentMethod: this.state.paymentMethod.id
+                paymentMethod: this.state.paymentMethod.id,
+                region: this.state.region.code
             }
         )
             .then(response => this.props.history.push('/requests/' + response.data))
@@ -81,6 +94,9 @@ export class RequestForm extends React.Component {
                 <FormSelect title={'Способ оплаты'} value={this.state.paymentMethod}
                             options={[{id: PaymentMethod.FZ_44.api, title: PaymentMethod.FZ_44.view}, {id: PaymentMethod.FZ_223.api, title: PaymentMethod.FZ_223.view}]}
                             changeHandler={(option) => this.changePaymentMethodHandler(option)}/>
+                <FormSelect title={'Регион'} value={this.state.region}
+                            options={this.state.regions}
+                            changeHandler={(option) => this.changeRegionHandler(option)}/>
                 <FormButton text={'Найти изготовителей'} isSubmitButton={true}/>
             </form>
         )
