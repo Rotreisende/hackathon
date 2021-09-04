@@ -1,6 +1,6 @@
-package ru.sstu.rosatom.dto;
+package ru.sstu.rosatom.entity.enums;
 
-enum PaidType {
+public enum PaidType {
     FZ_44("FZ_44"),
     FZ_223("FZ_223");
 

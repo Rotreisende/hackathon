@@ -2,11 +2,12 @@ package ru.sstu.rosatom.controller;
 
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
-import ru.sstu.rosatom.dto.EntityRequestBody;
-import ru.sstu.rosatom.dto.rusprofile.RusProfileEntity;
+import org.springframework.web.bind.annotation.*;
+import ru.sstu.rosatom.entity.Request;
+import ru.sstu.rosatom.entity.dto.EntityRequestBody;
+import ru.sstu.rosatom.entity.dto.rusprofile.RusProfileEntity;
+import ru.sstu.rosatom.repository.RequestRepo;
+import ru.sstu.rosatom.service.RequestService;
 import ru.sstu.rosatom.service.RusProfileService;
 
 import java.util.List;
@@ -14,12 +15,26 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/api")
 public class RusProfileController {
 
     private final RusProfileService rusProfileService;
+    private final RequestService requestService;
+
 
     @PostMapping("/request")
     public List<RusProfileEntity> getEntities(@RequestBody EntityRequestBody requestBody) {
         return rusProfileService.getEntitiesByOkpd2(requestBody.getCode());
     }
+
+    @GetMapping("/requests")
+    public Request save(@RequestBody EntityRequestBody requestBody) {
+        return requestService.save(requestBody);
+    }
+
+    @PostMapping("/requests")
+    public List<Request> getRequests() {
+        return requestService.requestList();
+    }
+
 }

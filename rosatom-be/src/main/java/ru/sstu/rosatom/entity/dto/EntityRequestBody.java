@@ -1,8 +1,9 @@
-package ru.sstu.rosatom.dto;
+package ru.sstu.rosatom.entity.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ru.sstu.rosatom.entity.enums.PaidType;
 
 @Data
 @AllArgsConstructor

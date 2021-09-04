@@ -5,9 +5,9 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import ru.sstu.rosatom.dto.rusprofile.RusProfileEntity;
-import ru.sstu.rosatom.dto.rusprofile.RusProfileRequest;
-import ru.sstu.rosatom.dto.rusprofile.RusProfileResponse;
+import ru.sstu.rosatom.entity.dto.rusprofile.RusProfileEntity;
+import ru.sstu.rosatom.entity.dto.rusprofile.RusProfileRequest;
+import ru.sstu.rosatom.entity.dto.rusprofile.RusProfileResponse;
 
 import java.util.List;
 import java.util.Objects;

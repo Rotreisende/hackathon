@@ -1,4 +1,4 @@
-package ru.sstu.rosatom.dto.rusprofile;
+package ru.sstu.rosatom.entity.dto.rusprofile;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;

@@ -1,0 +1,31 @@
+package ru.sstu.rosatom.entity;
+
+import lombok.*;
+import ru.sstu.rosatom.entity.enums.PaidType;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@Builder
+public class Request {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    private String name;
+    private String code;
+    private Long sum;
+    private Long count;
+    private String units;
+    private PaidType paymentMethod;
+
+
+}
