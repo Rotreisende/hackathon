@@ -1,5 +1,6 @@
 package ru.sstu.rosatom.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 import ru.sstu.rosatom.entity.enums.PaidType;
 
@@ -12,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @ToString
 @Builder
+@JsonIgnoreProperties(value = {"hibernateLazyInitializer", "handler"})
 public class Request {
 
     @Id
