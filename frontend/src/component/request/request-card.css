@@ -1,0 +1,31 @@
+.request-card {
+  border-radius: 0.25rem;
+  margin: 0.5rem;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  display: flex;
+  text-decoration: none;
+  color: black;
+}
+.request-card__info, .request-card__data {
+  width: 100%;
+  padding: 1rem;
+}
+.request-card__info__item, .request-card__data__item {
+  display: flex;
+  flex-direction: column;
+}
+.request-card__info__item__title, .request-card__data__item__title {
+  font-size: 0.8rem;
+  color: #9f9f9f;
+  margin-bottom: 0.2rem;
+}
+.request-card__info__item:not(:last-of-type), .request-card__data__item:not(:last-of-type) {
+  margin-bottom: 0.5rem;
+}
+.request-card__data {
+  max-width: 300px;
+  width: 100%;
+  border-left: 1px solid #ccc;
+}
+
+/*# sourceMappingURL=request-card.css.map */
