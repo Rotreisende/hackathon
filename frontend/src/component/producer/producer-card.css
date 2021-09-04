@@ -6,15 +6,19 @@
 .producer-card__title {
   padding: 0.5rem;
   border-bottom: 1px solid #ccc;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 500;
 }
 .producer-card__body__item {
   display: flex;
   padding: 0.5rem;
 }
-.producer-card__body__item > * {
+.producer-card__body__item__title, .producer-card__body__item__value {
   width: 100%;
+  font-size: 0.9rem;
+}
+.producer-card__body__item__title {
+  font-weight: 500;
 }
 .producer-card__body__item:not(:last-of-type) {
   border-bottom: 1px solid grey;

@@ -5,13 +5,13 @@
   border-radius: 0.25rem;
   cursor: pointer;
   text-decoration: none;
-  color: black;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #8686de;
+  background-color: #5a5ae9;
+  color: white;
   font-size: 1rem;
-  transition: box-shadow 0.2s;
+  transition: box-shadow 0.1s;
   width: -webkit-fill-available;
   text-align: center;
 }

@@ -1,5 +1,5 @@
 import './request-page.css';
-import {ProducerCard} from "../component/manufacturer/producer-card";
+import {ProducerCard} from "../component/producer/producer-card";
 import {RequestCard} from "../component/request/request-card";
 import React from "react";
 import axios from "axios";

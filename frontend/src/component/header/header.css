@@ -6,20 +6,30 @@
   align-items: center;
 }
 .header__logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin: 0 0.5rem;
+}
+.header__logo__image {
+  width: 3rem;
+}
+.header__logo__title {
   font-size: 1.4rem;
   font-weight: 500;
-  color: black;
-  text-decoration: none;
+  color: #005196;
+  margin: 0 0.5rem;
 }
 .header__link {
   padding: 0.5rem 1rem;
   text-decoration: none;
   border-radius: 0.25rem;
-  border: 1px solid #f9dcf7;
-  transition: background-color 0.1s;
+  border: 2px solid #7b71de;
+  transition: box-shadow 0.1s;
+  color: #7b71de;
 }
 .header__link:hover {
-  background-color: #f9dcf7;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 /*# sourceMappingURL=header.css.map */

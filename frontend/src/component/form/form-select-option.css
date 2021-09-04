@@ -1,7 +1,7 @@
 .form-select-option {
   padding: 0.5rem 1rem;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.1s;
 }
 .form-select-option:hover {
   background-color: #0000001c;

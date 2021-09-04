@@ -2,6 +2,7 @@ import {RequestCard} from "../component/request/request-card";
 import React from "react";
 import axios from "axios";
 import {RequestService} from "../service/RequestService";
+import './home.css';
 
 export class Home extends React.Component {
 
@@ -22,7 +23,7 @@ export class Home extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className={'home'}>
                 {
                     this.state.requests.map(request => <RequestCard key={request.id} request={request}/>)
                 }
