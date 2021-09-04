@@ -34,7 +34,6 @@ public class NalogService {
         //String buisnessFild = okpd2.split("\\.")[0];
         map.add("okved1", okpd2);
         //map.add("tru", okpd2);
-        //todo:
         map.add("region", region);
         //map.add("slvd", "");
         map.add("pageSize", "100");
