@@ -40,7 +40,6 @@ public class RegionsConfig {
         }catch (Exception e){
             System.out.println("беда");
         }
-        System.out.println(map);
         return map;
     }
 }
