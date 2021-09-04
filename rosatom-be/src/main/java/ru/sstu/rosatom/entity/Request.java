@@ -25,6 +25,6 @@ public class Request {
     private String units;
     private PaidType paymentMethod;
 
-    @OneToMany
+    @OneToMany (mappedBy="request", fetch=FetchType.EAGER)
     private List<Producer> producers;
 }
