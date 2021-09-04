@@ -46,7 +46,7 @@ public class RequestService {
                 .paymentMethod(entityRequestBody.getPaymentMethod())
                 .units(entityRequestBody.getUnits())
                 .producers(producers)
-                .countProducers(countProducers)
+                .producersCount(countProducers)
                 .date(LocalDate.now())
                 .build();
 

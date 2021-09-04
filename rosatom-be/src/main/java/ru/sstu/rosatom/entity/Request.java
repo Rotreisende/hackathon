@@ -37,5 +37,5 @@ public class Request {
 
     private LocalDate date;
 
-    private Integer countProducers;
+    private Integer producersCount;
 }
