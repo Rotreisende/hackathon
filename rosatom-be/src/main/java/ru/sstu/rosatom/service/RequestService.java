@@ -22,8 +22,6 @@ public class RequestService {
     private final RequestRepo requestRepo;
     private final NalogService nalogService;
 
-    public final Map<String,String> map;
-
     public List<Request> requestList() {
         return requestRepo.findAll();
     }

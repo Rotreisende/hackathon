@@ -7,4 +7,4 @@ frontend/src/react-app-env.d.ts
 
 **/target
 
-database
+database/data

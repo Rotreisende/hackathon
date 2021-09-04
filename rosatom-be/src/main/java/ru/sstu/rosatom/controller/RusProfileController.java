@@ -3,8 +3,10 @@ package ru.sstu.rosatom.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import ru.sstu.rosatom.entity.Region;
 import ru.sstu.rosatom.entity.Request;
 import ru.sstu.rosatom.entity.dto.EntityRequestBody;
+import ru.sstu.rosatom.service.RegionService;
 import ru.sstu.rosatom.service.RequestService;
 import ru.sstu.rosatom.service.RusProfileService;
 
@@ -19,7 +21,7 @@ public class RusProfileController {
 
     private final RusProfileService rusProfileService;
     private final RequestService requestService;
-
+    private final RegionService regionService;
 
     @PostMapping("/requests")
     public Integer save(@RequestBody EntityRequestBody requestBody) {
@@ -38,8 +40,8 @@ public class RusProfileController {
 
 
     @GetMapping("/regions")
-    public Map<String, String> get() {
-        return requestService.map;
+    public List<Region> get() {
+        return regionService.getRegions();
     }
 
 }
