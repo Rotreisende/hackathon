@@ -8,7 +8,6 @@ import ru.sstu.rosatom.entity.dto.EntityRequestBody;
 import ru.sstu.rosatom.entity.dto.rusprofile.RusProfileEntity;
 import ru.sstu.rosatom.repository.RequestRepo;
 
-import javax.persistence.Entity;
 import java.time.LocalDate;
 import java.util.List;
 
