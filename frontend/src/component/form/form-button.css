@@ -1,0 +1,28 @@
+.form-button {
+  margin: 1rem 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #dadce0;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #8686de;
+  font-size: 1rem;
+  transition: box-shadow 0.2s;
+  width: -webkit-fill-available;
+  text-align: center;
+}
+.form-button__text {
+  width: 100%;
+}
+.form-button__icon {
+  width: 1rem;
+}
+.form-button:hover {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+/*# sourceMappingURL=form-button.css.map */
