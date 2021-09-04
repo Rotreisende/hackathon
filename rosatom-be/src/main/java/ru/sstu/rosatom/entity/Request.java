@@ -23,8 +23,12 @@ public class Request {
     private Long sum;
     private Long count;
     private String units;
+
+    @Enumerated(EnumType.ORDINAL)
     private PaidType paymentMethod;
 
-    @OneToMany (mappedBy="request", fetch=FetchType.EAGER)
+    @OneToMany(
+            orphanRemoval = true,
+            cascade = CascadeType.ALL)
     private List<Producer> producers;
 }
