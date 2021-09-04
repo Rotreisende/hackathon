@@ -1,39 +1,35 @@
-## График выполнения
+<h4>Реализованная функциональность</h4>
+<ul>
+    <li>Составление тз</li>
+    <li>Поиск компаний по тз и рассылка им предложений</li>
+    <li>Получение ответа от компаний и отсеивание их по ряду критериев</li>
+</ul> 
+<h4>Особенность проекта в следующем:</h4>
+<ul>
+ <li>?</li>
+ </ul>
+<h4>Основной стек технологий:</h4>
+<ul>
+	<li>React.</li>
+	<li>PostgreSQl.</li>
+	<li>Java (Spring Boot)</li>
+	<li>Git, Docker</li>
+  
+ </ul>
 
-<table>
-  <tr>
-    <th>#</th>
-    <th>Функционал</th>
-    <th>Выполнена</th>
-  </tr>
-  <tr>
-    <td>1</td>
-    <td>Авторизация / аутентификация / регистрация</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td>Поиск источника данных</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>3</td>
-    <td>Парсинг данных</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>4</td>
-    <td>Агрегация данных</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td>Реализация функционала выдачи данных пользователю</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>6</td>
-    <td>?</td>
-    <td></td>
-  </tr>
-</table>
+
+<h4>Установка в docker</h4>
+<ul>
+ <li>Command to build backend: `mvn clean install`</li>
+ <li>Command to build docker images: `docker-compose build`</li>
+ <li>Command to start docker containers: `docker-compose up`</li>  
+</ul>
+
+РАЗРАБОТЧИКИ
+
+<h4>Шевяков Влад frontend </h4>
+<h4>Дикун Алексей backend </h4>
+<h4>Перверталов Виталий backend </h4>
+<h4>Фисенко Сергей backend </h4>
+<h4>Спицын Алексей speaker </h4>
+
