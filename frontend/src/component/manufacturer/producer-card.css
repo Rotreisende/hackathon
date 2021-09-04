@@ -1,0 +1,23 @@
+.producer-card {
+  margin: 0.5rem;
+  border-radius: 0.25rem;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.producer-card__title {
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.producer-card__body__item {
+  display: flex;
+  padding: 0.5rem;
+}
+.producer-card__body__item > * {
+  width: 100%;
+}
+.producer-card__body__item:not(:last-of-type) {
+  border-bottom: 1px solid grey;
+}
+
+/*# sourceMappingURL=producer-card.css.map */

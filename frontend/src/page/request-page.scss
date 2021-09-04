@@ -1,0 +1,7 @@
+.request-page {
+
+  &__manufacturers {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  }
+}
