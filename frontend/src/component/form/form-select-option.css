@@ -1,0 +1,13 @@
+.form-select-option {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.form-select-option:hover {
+  background-color: #0000001c;
+}
+.form-select-option:not(:last-of-type) {
+  border-bottom: 1px solid #dadce0;
+}
+
+/*# sourceMappingURL=form-select-option.css.map */
