@@ -27,12 +27,12 @@ public class RusProfileController {
         return rusProfileService.getEntitiesByOkpd2(requestBody.getCode());
     }
 
-    @GetMapping("/requests")
+    @PostMapping("/requests")
     public Request save(@RequestBody EntityRequestBody requestBody) {
         return requestService.save(requestBody);
     }
 
-    @PostMapping("/requests")
+    @GetMapping("/requests")
     public List<Request> getRequests() {
         return requestService.requestList();
     }
