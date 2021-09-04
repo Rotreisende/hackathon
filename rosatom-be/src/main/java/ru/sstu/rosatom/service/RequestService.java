@@ -34,7 +34,7 @@ public class RequestService {
 
     public Integer save(EntityRequestBody entityRequestBody) {
 
-        List<RusProfileEntity> rusProfileEntities = rusProfileService.getEntitiesByOkpd2(entityRequestBody.getCode());
+        //List<RusProfileEntity> rusProfileEntities = rusProfileService.getEntitiesByOkpd2(entityRequestBody.getCode());
         List<NalogEntity> nalogEntities = nalogService.getNalogEntities(entityRequestBody.getCode(), entityRequestBody.getRegion());
 
        // List<Producer> producersFromRusProfile = ProducerService.convertRusProfile(rusProfileEntities);
