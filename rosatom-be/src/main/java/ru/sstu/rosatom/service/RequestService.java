@@ -10,6 +10,7 @@ import ru.sstu.rosatom.entity.dto.rusprofile.RusProfileEntity;
 import ru.sstu.rosatom.repository.RequestRepo;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -35,10 +36,10 @@ public class RequestService {
         List<RusProfileEntity> rusProfileEntities = rusProfileService.getEntitiesByOkpd2(entityRequestBody.getCode());
         List<NalogEntity> nalogEntities = nalogService.getNalogEntities(entityRequestBody.getCode());
 
-        List<Producer> producersFromRusProfile = ProducerService.convertRusProfile(rusProfileEntities);
+       // List<Producer> producersFromRusProfile = ProducerService.convertRusProfile(rusProfileEntities);
         List<Producer> producersFromNalog = ProducerService.convertNalogEntity(nalogEntities);
 
-        List<Producer> mergedProducers = mergeListsByInn(producersFromRusProfile, producersFromNalog);
+        List<Producer> mergedProducers = mergeListsByInn(new ArrayList<>(), producersFromNalog);
 
 
         Integer countProducers = mergedProducers.size();

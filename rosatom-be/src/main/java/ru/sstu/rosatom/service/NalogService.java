@@ -24,19 +24,20 @@ public class NalogService {
 
     public List<NalogEntity> getNalogEntities(String okpd2) {
         HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+        headers.setContentType(MediaType.MULTIPART_FORM_DATA);
 
         MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
         map.add("mode", "extended");
         map.add("page", "1");
-        map.add("query", "");
+        //map.add("query", "");
         //map.add("dtCategory", "10.08.2021");
-        map.add("mode", "extended");
-        map.add("okved1", okpd2);
+        String buisnessFild = okpd2.split("\\.")[0];
+        map.add("okved1", buisnessFild);
         map.add("tru", okpd2);
-        map.add("region", "");
-        map.add("slvd", "");
-        map.add("pageSize", "10000");
+        //todo:
+        //map.add("region", "");
+        //map.add("slvd", "");
+        map.add("pageSize", "100");
         map.add("sortField", "NAME_EX");
         map.add("sort", "ASC");
 

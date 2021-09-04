@@ -5,8 +5,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ru.sstu.rosatom.entity.Request;
 import ru.sstu.rosatom.entity.dto.EntityRequestBody;
-import ru.sstu.rosatom.entity.dto.rusprofile.RusProfileEntity;
-import ru.sstu.rosatom.repository.RequestRepo;
 import ru.sstu.rosatom.service.RequestService;
 import ru.sstu.rosatom.service.RusProfileService;
 
@@ -20,7 +18,6 @@ public class RusProfileController {
 
     private final RusProfileService rusProfileService;
     private final RequestService requestService;
-
 
 
     @PostMapping("/requests")
