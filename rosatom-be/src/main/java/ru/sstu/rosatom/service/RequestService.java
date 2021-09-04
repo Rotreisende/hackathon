@@ -12,6 +12,8 @@ import ru.sstu.rosatom.repository.RequestRepo;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -19,6 +21,8 @@ public class RequestService {
 
     private final RequestRepo requestRepo;
     private final NalogService nalogService;
+
+    private final Map<String,String> map;
 
     public List<Request> requestList() {
         return requestRepo.findAll();
@@ -51,7 +55,7 @@ public class RequestService {
                 .sum(entityRequestBody.getSum())
                 .paymentMethod(entityRequestBody.getPaymentMethod())
                 .units(entityRequestBody.getUnits())
-                .producers(producers)
+                .producers(producersFromNalog)
                 .producersCount(countProducers)
                 .date(LocalDate.now())
                 .producers(mergedProducers)
