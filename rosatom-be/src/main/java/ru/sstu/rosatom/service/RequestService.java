@@ -12,7 +12,6 @@ import ru.sstu.rosatom.repository.RequestRepo;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -27,7 +26,7 @@ public class RequestService {
 
     public RusProfileService rusProfileService;
 
-    public Request getById(Integer id) {
+    public Request getById(Integer id){
         return requestRepo.getOne(id);
     }
 
@@ -52,6 +51,7 @@ public class RequestService {
                 .sum(entityRequestBody.getSum())
                 .paymentMethod(entityRequestBody.getPaymentMethod())
                 .units(entityRequestBody.getUnits())
+                .producers(producers)
                 .producersCount(countProducers)
                 .date(LocalDate.now())
                 .producers(mergedProducers)
