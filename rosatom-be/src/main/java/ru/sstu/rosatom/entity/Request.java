@@ -3,10 +3,8 @@ package ru.sstu.rosatom.entity;
 import lombok.*;
 import ru.sstu.rosatom.entity.enums.PaidType;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -27,5 +25,6 @@ public class Request {
     private String units;
     private PaidType paymentMethod;
 
-
+    @OneToMany
+    private List<Producer> producers;
 }

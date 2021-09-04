@@ -2,8 +2,10 @@ package ru.sstu.rosatom.service;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import ru.sstu.rosatom.entity.Producer;
 import ru.sstu.rosatom.entity.Request;
 import ru.sstu.rosatom.entity.dto.EntityRequestBody;
+import ru.sstu.rosatom.entity.dto.rusprofile.RusProfileEntity;
 import ru.sstu.rosatom.repository.RequestRepo;
 
 import javax.persistence.Entity;
@@ -19,7 +21,17 @@ public class RequestService {
         return requestRepo.findAll();
     }
 
-    public Request save(EntityRequestBody entityRequestBody){
+    public RusProfileService rusProfileService;
+
+    public Request getById(Integer id){
+        return requestRepo.getOne(id);
+    }
+
+    public Integer save(EntityRequestBody entityRequestBody){
+
+        List<RusProfileEntity> rusProfileEntities = rusProfileService.getEntitiesByOkpd2(entityRequestBody.getCode());
+
+        List<Producer> producers = ProducerService.convert(rusProfileEntities);
 
         Request request = Request.builder()
                 .name(entityRequestBody.getName())
@@ -28,8 +40,9 @@ public class RequestService {
                 .sum(entityRequestBody.getSum())
                 .paymentMethod(entityRequestBody.getPaymentMethod())
                 .units(entityRequestBody.getUnits())
+                .producers(producers)
                 .build();
 
-         return requestRepo.save(request);
+        return requestRepo.save(request).getId();
     }
 }

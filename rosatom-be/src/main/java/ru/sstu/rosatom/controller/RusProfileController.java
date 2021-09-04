@@ -22,19 +22,20 @@ public class RusProfileController {
     private final RequestService requestService;
 
 
-    @PostMapping("/request")
-    public List<RusProfileEntity> getEntities(@RequestBody EntityRequestBody requestBody) {
-        return rusProfileService.getEntitiesByOkpd2(requestBody.getCode());
-    }
 
     @PostMapping("/requests")
-    public Request save(@RequestBody EntityRequestBody requestBody) {
+    public Integer save(@RequestBody EntityRequestBody requestBody) {
         return requestService.save(requestBody);
     }
 
     @GetMapping("/requests")
     public List<Request> getRequests() {
         return requestService.requestList();
+    }
+
+    @GetMapping("/requests/{id}")
+    public Request get(@PathVariable("id") Integer id) {
+        return requestService.getById(id);
     }
 
 }
