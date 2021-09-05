@@ -38,10 +38,10 @@ public class NonStaticUtils {
             addressAndPostcode.setPostcode(data.getAddress().getData().getPostal_code());
             addressAndPostcode.setName(daDataResponse.getBody().getSuggestions().get(0).getUnrestricted_value());
             if (data.getManagement() != null) {
-                addressAndPostcode.setName(data.getManagement().getName());
+                addressAndPostcode.setCeo(data.getManagement().getName());
             } else if (data.getFio() != null) {
                 DaDataFio daDataFio = data.getFio();
-                addressAndPostcode.setName(String.format("%s %s %s", daDataFio.getSurname(), daDataFio.getName(), daDataFio.getPatronymic()));
+                addressAndPostcode.setCeo(String.format("%s %s %s", daDataFio.getSurname(), daDataFio.getName(), daDataFio.getPatronymic()));
             }
         }
         return addressAndPostcode;

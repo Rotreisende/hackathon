@@ -74,7 +74,7 @@ export class RequestForm extends React.Component {
                     count: this.state.count,
                     units: this.state.units,
                     paymentMethod: this.state.paymentMethod ? this.state.paymentMethod.id : null,
-                    region: this.state.region ? this.state.region.code : null
+                    region: this.state.region ? this.state.region.id : null
                 }
             )
                 .then(response => this.props.history.push('/requests/' + response.data))

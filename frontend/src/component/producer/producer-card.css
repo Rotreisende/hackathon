@@ -11,17 +11,31 @@
 }
 .producer-card__body__item {
   display: flex;
-  padding: 0.5rem;
 }
 .producer-card__body__item__title, .producer-card__body__item__value {
   width: 100%;
   font-size: 0.9rem;
+  padding: 0.5rem;
 }
 .producer-card__body__item__title {
   font-weight: 500;
 }
 .producer-card__body__item:not(:last-of-type) {
   border-bottom: 1px solid #ccc;
+}
+.producer-card__body__item__value_link {
+  padding: 0.25rem;
+  display: flex;
+}
+.producer-card__body__item__value_fio {
+  text-transform: capitalize;
+}
+.producer-card__body__item__value__link {
+  padding: 0.25rem 0.5rem;
+  background-color: #195a96;
+  color: white;
+  text-decoration: none;
+  border-radius: 0.25rem;
 }
 
 /*# sourceMappingURL=producer-card.css.map */

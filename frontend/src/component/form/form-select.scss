@@ -41,7 +41,11 @@
     }
 
     &__value {
-      min-height: 1.3rem;
+      border: none;
+      background-color: transparent;
+      font-size: 1rem;
+      outline: none;
+      z-index: 1;
     }
 
     &:hover > &__fieldset {
@@ -57,7 +61,7 @@
     width: 100%;
     background-color: white;
     box-shadow: rgb(60 64 67 / 30%) 0px 1px 2px 0px, rgb(60 64 67 / 15%) 0px 2px 6px 2px;
-    z-index: 1;
+    z-index: 2;
   }
 
   &_active & {

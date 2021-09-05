@@ -7,9 +7,17 @@ export class FormSelect extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            active: false
+            active: false,
+            input: '',
+            options: []
         }
         this.ref = React.createRef();
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (prevProps.options !== this.props.options) {
+            this.setState({options: this.props.options});
+        }
     }
 
     documentClickEventListener(e) {
@@ -28,21 +36,34 @@ export class FormSelect extends React.Component {
     }
 
     clickOptionHandler(option) {
+        this.setState({input: option ? option.title : ''});
         this.props.changeHandler(option);
         this.clickSelectHandler();
     }
 
+    changeInputHandler(e) {
+        this.setState({
+            input: e.target.value,
+            options: this.props.options.filter(option => option.title.toLowerCase().startsWith(e.target.value.toLowerCase()))
+        });
+    }
+
     clickSelectHandler() {
         if (!this.props.disabled)
-            this.setState({active: !this.state.active});
+            this.setState({active: !this.state.active}, () => {
+                if (!this.state.active)
+                    this.ref.current.getElementsByClassName('form-select__form__value')[0].blur();
+                else
+                    this.ref.current.getElementsByClassName('form-select__form__value')[0].focus();
+            });
     }
 
     render() {
         return (
-            <div ref={this.ref} className={['form-select', this.state.active ? 'form-select_active' : '', !!this.props.value ? 'form-select_filled' : ''].join(' ')}>
+            <div ref={this.ref} className={['form-select', this.state.active ? 'form-select_active' : '', !!this.state.input ? 'form-select_filled' : ''].join(' ')}>
                 <div className={'form-select__form'} onClick={() => this.clickSelectHandler()}>
                     <span className={'form-select__form__title'}>{this.props.title}</span>
-                    <div className={'form-select__form__value'}>{this.props.value?.title ? this.props.value?.title : ''}</div>
+                    <input onInput={(e) => this.changeInputHandler(e)} className={'form-select__form__value'} value={this.state.input}/>
                     <fieldset className={'form-select__form__fieldset'}>
                         <legend className={'form-select__form__fieldset__legend'}>{this.props.title}</legend>
                     </fieldset>
@@ -54,7 +75,7 @@ export class FormSelect extends React.Component {
                                 clickHandler={(option) => this.clickOptionHandler(option)}
                             />
                             {
-                                this.props.options.map((option) =>
+                                this.state.options.map((option) =>
                                     <FormSelectOption
                                         value={option}
                                         key={option.id}

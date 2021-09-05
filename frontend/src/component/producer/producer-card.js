@@ -29,6 +29,10 @@ export const ProducerCard = ({data}) => {
                     <span className={'producer-card__body__item__value'}>{data.address}</span>
                 </div>
                 <div className={'producer-card__body__item'}>
+                    <span className={'producer-card__body__item__title'}>Почтовый индекс:</span>
+                    <span className={'producer-card__body__item__value'}>{data.postcode}</span>
+                </div>
+                <div className={'producer-card__body__item'}>
                     <span className={'producer-card__body__item__title'}>Оквед (код):</span>
                     <span className={'producer-card__body__item__value'}>{data.main_okved_id}</span>
                 </div>
@@ -39,6 +43,12 @@ export const ProducerCard = ({data}) => {
                 <div className={'producer-card__body__item'}>
                     <span className={'producer-card__body__item__title'}>Дата регистрации:</span>
                     <span className={'producer-card__body__item__value'}>{data.reg_date}</span>
+                </div>
+                <div className={'producer-card__body__item'}>
+                    <span className={'producer-card__body__item__title'}>Росреестр:</span>
+                    <div className={'producer-card__body__item__value producer-card__body__item__value_link'}>
+                        <a className={'producer-card__body__item__value__link'} href={`https://ofd.nalog.ru/excerpt.pdf?token=${data.token}`}>Выгрузить данные</a>
+                    </div>
                 </div>
             </div>
         </div>
