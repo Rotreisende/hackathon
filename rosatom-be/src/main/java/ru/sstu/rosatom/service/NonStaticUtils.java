@@ -10,6 +10,8 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import ru.sstu.rosatom.entity.dto.dadata.DaDaDataEntityData;
+import ru.sstu.rosatom.entity.dto.dadata.DaDataFio;
 import ru.sstu.rosatom.entity.dto.dadata.DaDataResponse;
 
 import java.util.Map;
@@ -31,8 +33,16 @@ public class NonStaticUtils {
         ResponseEntity<DaDataResponse> daDataResponse = restTemplate.exchange(DADATA_URL, HttpMethod.POST, request, DaDataResponse.class);
         AddressAndPostcode addressAndPostcode = new AddressAndPostcode();
         if (daDataResponse.getBody() != null && daDataResponse.getBody().getSuggestions().size() > 0) {
-            addressAndPostcode.setAddress(daDataResponse.getBody().getSuggestions().get(0).getData().getAddress().getValue());
-            addressAndPostcode.setPostcode(daDataResponse.getBody().getSuggestions().get(0).getData().getAddress().getData().getPostal_code());
+            DaDaDataEntityData data = daDataResponse.getBody().getSuggestions().get(0).getData();
+            addressAndPostcode.setAddress(data.getAddress().getValue());
+            addressAndPostcode.setPostcode(data.getAddress().getData().getPostal_code());
+            addressAndPostcode.setName(daDataResponse.getBody().getSuggestions().get(0).getUnrestricted_value());
+            if (data.getManagement() != null) {
+                addressAndPostcode.setName(data.getManagement().getName());
+            } else if (data.getFio() != null) {
+                DaDataFio daDataFio = data.getFio();
+                addressAndPostcode.setName(String.format("%s %s %s", daDataFio.getSurname(), daDataFio.getName(), daDataFio.getPatronymic()));
+            }
         }
         return addressAndPostcode;
     }
@@ -44,5 +54,7 @@ public class NonStaticUtils {
     public static class AddressAndPostcode {
         private String postcode;
         private String address;
+        private String ceo;
+        private String name;
     }
 }

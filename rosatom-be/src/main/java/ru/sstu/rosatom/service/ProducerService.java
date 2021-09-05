@@ -33,7 +33,6 @@ public class ProducerService {
     private static Producer convert(NalogEntity nalogEntity) {
         return Producer.builder()
                 .name(nalogEntity.getName_ex())
-                .ceo_name(nalogEntity.getName_ex())
                 .inn(nalogEntity.getInn())
                 .ogrn(nalogEntity.getOgrn())
                 .okved_descr(nalogEntity.getOkved1name())
@@ -55,6 +54,8 @@ public class ProducerService {
             NonStaticUtils.AddressAndPostcode addressAndPostcode = nonStaticUtils.findInDaData(producer.getInn());
             producer.setAddress(addressAndPostcode.getAddress());
             producer.setPostcode(addressAndPostcode.getPostcode());
+            producer.setCeo_name(addressAndPostcode.getCeo());
+            producer.setName(addressAndPostcode.getName());
         }
         return producers;
     }

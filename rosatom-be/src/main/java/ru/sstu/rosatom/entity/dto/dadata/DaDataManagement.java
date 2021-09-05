@@ -5,10 +5,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class DaDataEntity {
+@AllArgsConstructor
+public class DaDataManagement {
 
-    private DaDaDataEntityData data;
-    private String unrestricted_value;
+    private String name;
 }

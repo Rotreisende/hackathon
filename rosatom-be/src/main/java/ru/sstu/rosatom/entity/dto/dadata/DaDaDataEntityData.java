@@ -10,4 +10,6 @@ import lombok.NoArgsConstructor;
 public class DaDaDataEntityData {
 
     private DaDataAdressEntity address;
+    private DaDataManagement management;
+    private DaDataFio fio;
 }
