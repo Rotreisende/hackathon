@@ -31,7 +31,6 @@ public class Producer {
     private String main_okved_id;
     private String okved_descr;
     private String reg_date;
-    private String email;
-    private String phone;
+    private String postcode;
     private String token;
 }
