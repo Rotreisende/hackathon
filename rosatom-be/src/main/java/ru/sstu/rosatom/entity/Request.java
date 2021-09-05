@@ -32,7 +32,8 @@ public class Request {
 
     @OneToMany(
             orphanRemoval = true,
-            cascade = CascadeType.ALL)
+            cascade = CascadeType.ALL
+    )
     private List<Producer> producers;
 
     private LocalDate date;

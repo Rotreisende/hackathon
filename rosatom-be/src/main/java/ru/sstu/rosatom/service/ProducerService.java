@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 public class ProducerService {
 
     @Autowired
-    private static NonStaticUtils nonStaticUtils;
+    private NonStaticUtils nonStaticUtils;
 
     public static Producer convert(RusProfileEntity rusProfileEntity) {
         return Producer.builder()
@@ -44,12 +44,12 @@ public class ProducerService {
                 .build();
     }
 
-    public static List<Producer> convertRusProfile(List<RusProfileEntity> rusProfileEntities) {
+    public List<Producer> convertRusProfile(List<RusProfileEntity> rusProfileEntities) {
         return rusProfileEntities.stream().map(ProducerService::convert).collect(Collectors.toList());
 
     }
 
-    public static List<Producer> convertNalogEntity(List<NalogEntity> nalogEntities) {
+    public List<Producer> convertNalogEntity(List<NalogEntity> nalogEntities) {
         List<Producer> producers = nalogEntities.stream().map(ProducerService::convert).collect(Collectors.toList());
         for (Producer producer : producers) {
             NonStaticUtils.AddressAndPostcode addressAndPostcode = nonStaticUtils.findInDaData(producer.getInn());

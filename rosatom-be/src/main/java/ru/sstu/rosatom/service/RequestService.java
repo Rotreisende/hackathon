@@ -21,6 +21,7 @@ public class RequestService {
 
     private final RequestRepo requestRepo;
     private final NalogService nalogService;
+    private final ProducerService producerService;
 
     public List<Request> requestList() {
         return requestRepo.findAll();
@@ -38,7 +39,7 @@ public class RequestService {
         List<NalogEntity> nalogEntities = nalogService.getNalogEntities(entityRequestBody.getCode(), entityRequestBody.getRegion());
 
        // List<Producer> producersFromRusProfile = ProducerService.convertRusProfile(rusProfileEntities);
-        List<Producer> producersFromNalog = ProducerService.convertNalogEntity(nalogEntities);
+        List<Producer> producersFromNalog = producerService.convertNalogEntity(nalogEntities);
 
         List<Producer> mergedProducers = mergeListsByInn(new ArrayList<>(), producersFromNalog);
 
