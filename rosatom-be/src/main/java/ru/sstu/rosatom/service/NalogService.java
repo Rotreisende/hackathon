@@ -33,6 +33,9 @@ public class NalogService {
         //map.add("dtCategory", "10.08.2021");
         map.add("okved1", okpd2);
         //map.add("tru", okpd2);
+        if (region.length() < 2) {
+            region = "0" + region;
+        }
         map.add("region", region);
         map.add("category", "1");
         map.add("category", "2");
