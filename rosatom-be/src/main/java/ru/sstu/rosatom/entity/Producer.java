@@ -33,4 +33,5 @@ public class Producer {
     private String reg_date;
     private String email;
     private String phone;
+    private String token;
 }

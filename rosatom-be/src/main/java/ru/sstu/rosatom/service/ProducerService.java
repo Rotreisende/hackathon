@@ -44,8 +44,9 @@ public class ProducerService {
                 .region(nalogEntity.getRegioncode())
                 .reg_date(nalogEntity.getDtregistry())
                 .main_okved_id(nalogEntity.getOkved1())
-                .email(null)
-                .phone(null)
+                .email(nalogEntity.getEmail())
+                .phone(nalogEntity.getPhone())
+                .token(nalogEntity.getToken())
                 .build();
     }
 

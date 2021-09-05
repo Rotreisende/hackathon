@@ -37,7 +37,7 @@ public class NalogService {
         map.add("category", "1");
         map.add("category", "2");
         map.add("category", "3");
-        map.add("hasContracts", "1");
+        //map.add("hasContracts", "1");
         //map.add("slvd", "");
         map.add("pageSize", "100");
         map.add("sortField", "NAME_EX");
